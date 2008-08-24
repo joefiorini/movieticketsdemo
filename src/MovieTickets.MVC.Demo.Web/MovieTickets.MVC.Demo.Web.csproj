@@ -137,6 +137,12 @@
     <Content Include="ARConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="bin\IronRuby.dll" />
+    <Content Include="bin\IronRuby.Libraries.dll" />
+    <Content Include="bin\IronRubyMvcLibrary.dll" />
+    <Content Include="bin\IronRubyMvcLibrary.pdb" />
+    <Content Include="bin\Microsoft.Scripting.Core.dll" />
+    <Content Include="bin\Microsoft.Scripting.dll" />
     <Content Include="bin\MovieTickets.MVC.Demo.Database.dll" />
     <Content Include="bin\MovieTickets.MVC.Demo.Database.pdb" />
     <Content Include="bin\RikMigrations.dll" />
@@ -158,10 +164,17 @@
     <Content Include="Reference_Dependencies\system.Web.Routing.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IronRubyMvcLibrary\IronRubyMvcLibrary.csproj">
+      <Project>{46333EBB-C1FF-4E28-B48E-CB3D5BB70CDB}</Project>
+      <Name>IronRubyMvcLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MovieTickets.MVC.Demo.Database\MovieTickets.MVC.Demo.Database.csproj">
       <Project>{8E2438E1-70A6-41A2-881F-19127601EF17}</Project>
       <Name>MovieTickets.MVC.Demo.Database</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="routes.rb" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
