@@ -3,7 +3,7 @@
     <ul id="movies">
     <% foreach (var movie in ViewData.Model.Movies) { %>
     <li>
-        <img src="<%= movie.PosterThumbnailUrl %>" width="150" height="255" alt="<%= movie.Name %>" />
+        <a href="<%= Url.RouteUrl("Movie", new {movie.Id}) %>"><img src="<%= movie.PosterThumbnailUrl %>" width="150" height="255" alt="<%= movie.Name %>" /></a>
     </li>    
     <% } %>
     </ul>        
