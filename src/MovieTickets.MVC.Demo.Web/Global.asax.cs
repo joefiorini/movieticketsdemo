@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Castle.ActiveRecord;
+using Castle.ActiveRecord.Framework;
+using Castle.ActiveRecord.Framework.Config;
+using MovieTickets.MVC.Demo.Web.Models;
 
 namespace MovieTickets.MVC.Demo.Web
 {
@@ -26,6 +31,8 @@ namespace MovieTickets.MVC.Demo.Web
         protected void Application_Start()
         {
             RegisterRoutes(RouteTable.Routes);
+            IConfigurationSource config = new XmlConfigurationSource(Server.MapPath("/bin/ARConfig.xml"));
+            ActiveRecordStarter.Initialize(config, typeof(Movie));
         }
     }
 }

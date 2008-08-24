@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+
+<activerecord>
+  <config>
+    <add
+      key="hibernate.connection.driver_class"
+      value="NHibernate.Driver.SqlClientDriver" />
+    <add
+      key="hibernate.dialect"
+      value="NHibernate.Dialect.MsSql2005Dialect" />
+    <add
+      key="hibernate.connection.provider"
+      value="NHibernate.Connection.DriverConnectionProvider" />
+    <add
+      key="hibernate.connection.connection_string"
+      value="Data Source=VISTA-DEV\SQLEXPRESS;Initial Catalog=MovieTickets;User Id=mt_user;Password=mt@user;" />
+  </config>
+</activerecord>
