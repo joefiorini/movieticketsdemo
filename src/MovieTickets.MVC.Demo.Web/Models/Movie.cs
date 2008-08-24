@@ -27,5 +27,8 @@ namespace MovieTickets.MVC.Demo.Web.Models
         [Property]
         public string Description { get; set; }
 
+        [Property]
+        public string PosterThumbnailUrl { get; set; }
+
     }
 }

@@ -54,6 +54,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\NHibernate.dll</HintPath>
     </Reference>
+    <Reference Include="RikMigrations, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RikMigrations.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core">
@@ -88,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MigrationsController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -132,6 +137,10 @@
     <Content Include="ARConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="bin\MovieTickets.MVC.Demo.Database.dll" />
+    <Content Include="bin\MovieTickets.MVC.Demo.Database.pdb" />
+    <Content Include="bin\RikMigrations.dll" />
+    <Content Include="bin\RikMigrations.pdb" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Views\Movies\Index.aspx" />
@@ -147,6 +156,12 @@
     <Content Include="Reference_Dependencies\System.Web.Abstractions.dll" />
     <Content Include="Reference_Dependencies\System.Web.Mvc.dll" />
     <Content Include="Reference_Dependencies\system.Web.Routing.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MovieTickets.MVC.Demo.Database\MovieTickets.MVC.Demo.Database.csproj">
+      <Project>{8E2438E1-70A6-41A2-881F-19127601EF17}</Project>
+      <Name>MovieTickets.MVC.Demo.Database</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

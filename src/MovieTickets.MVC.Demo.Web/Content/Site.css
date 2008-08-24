@@ -190,3 +190,8 @@ ul#menu li.selected a
 {
     clear: both;
 }
+
+ul#movies
+{
+    list-style-type: none;
+}

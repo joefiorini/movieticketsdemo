@@ -2,7 +2,7 @@ using System;
 using MovieTickets.MVC.Demo.Database;
 using RikMigrations;
 
-[assembly: Migration(typeof(MovieTickets.MVC.Demo.Database.CreateMovies), 1)]
+[assembly: Migration(typeof(CreateMovies), 1)]
 namespace MovieTickets.MVC.Demo.Database
 {
     public class CreateMovies : IMigration
