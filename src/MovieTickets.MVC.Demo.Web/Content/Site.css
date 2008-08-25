@@ -195,3 +195,20 @@ ul#movies
 {
     list-style-type: none;
 }
+
+div#MovieBasicData
+{
+    float: left;
+    text-align: center;
+    width: 200px;
+}
+
+div#MovieBasicData p
+{
+    margin-bottom: 0px;
+}
+
+div#MovieDetailedData
+{
+    margin-top: 50px;
+}
