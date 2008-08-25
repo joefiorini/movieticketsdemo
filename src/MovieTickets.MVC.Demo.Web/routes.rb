@@ -2,6 +2,9 @@
 
 $routes.map_route "movies/create",
   {:controller => 'Movies', :action => 'create' }
+
+$routes.map_route "movies/update",
+  {:controller => 'Movies', :action => 'update' }
   
 $routes.map_route "edit-movie", "movies/{id}/edit",
   {:controller => 'Movies', :action => 'Edit' }
@@ -17,6 +20,7 @@ $routes.map_route "Movies", "movies",
 
 $routes.map_route "{controller}/{action}"
   {:controller => 'Home', :action => 'index' }
+  
 $routes.map_route "{controller}/{action}/{id}",
   {:controller => 'Home', :action => 'index', :id => ''}
 
