@@ -13,6 +13,11 @@ body
     color: #696969;
 }
 
+img
+{
+    border: 0;
+}
+
 a:link
 {
     color: #034af3;
