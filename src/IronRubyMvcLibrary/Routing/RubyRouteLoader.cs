@@ -37,7 +37,7 @@ namespace IronRubyMvcLibrary.Routing
             }
         }
 
-        public   static RouteCollection LoadFromCache(this RouteCollection routes)
+        public static RouteCollection LoadFromCache(this RouteCollection routes)
         {
             routes = HttpContext.Current.Cache["routes"] as RouteCollection;
             return routes;
