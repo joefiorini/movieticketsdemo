@@ -105,6 +105,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AppHelper.cs" />
     <Compile Include="Models\ModelContainer.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -122,6 +123,27 @@
     </Compile>
     <Compile Include="Views\Home\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Movies\MovieForm.ascx.cs">
+      <DependentUpon>MovieForm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Movies\MovieForm.ascx.designer.cs">
+      <DependentUpon>MovieForm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Movies\New.aspx.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Movies\New.aspx.designer.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Movies\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Movies\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Movies\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -162,6 +184,9 @@
     <Content Include="bin\System.Web.Mvc.pdb" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Views\Movies\MovieForm.ascx" />
+    <Content Include="Views\Movies\New.aspx" />
+    <Content Include="Views\Movies\Edit.aspx" />
     <Content Include="Views\Movies\Index.aspx" />
     <Content Include="Views\Movies\Show.aspx" />
     <Content Include="Web.config" />
