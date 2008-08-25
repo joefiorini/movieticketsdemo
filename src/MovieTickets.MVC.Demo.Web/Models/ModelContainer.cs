@@ -11,5 +11,10 @@ namespace MovieTickets.MVC.Demo.Web.Models
         {
             return new ModelContainer {Movies = movies};
         }
+
+        public static ModelContainer Create(Movie movie)
+        {
+            return new ModelContainer {Movie = movie};
+        }
     }
 }

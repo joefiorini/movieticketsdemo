@@ -17,5 +17,14 @@ namespace MovieTickets.MVC.Demo.Web.Controllers
 
             return View(container);
         }
+
+        public ActionResult Show(int id)
+        {
+            var movie = Movie.Find(id);
+
+            var container = ModelContainer.Create(movie);
+
+            return View(container);
+        }
     }
 }
