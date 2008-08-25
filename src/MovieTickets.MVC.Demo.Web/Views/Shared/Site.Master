@@ -22,6 +22,9 @@
                 <li>
                     <%= Html.ActionLink("About Us", "About", "Home")%>
                 </li>
+                <li>
+                    <%= Html.RouteLink("Movies", "movies") %>
+                </li>
             </ul>
         </div>
 
