@@ -52,6 +52,13 @@ namespace MovieTickets.MVC.Demo.Web.Controllers
             return new RedirectToRouteResult("movie", new RouteValueDictionary(new {container.Movie.Id}));
         }
 
+        public ActionResult Delete(int id)
+        {
+            var movie = Movie.Find(id);
+            movie.Delete();
+            return new RedirectToRouteResult("movies", null);
+        }
+
         private ModelContainer GetMovie(int id)
         {
             var movie = Movie.Find(id);

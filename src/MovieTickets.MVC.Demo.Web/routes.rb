@@ -1,5 +1,8 @@
 ﻿include MovieTickets::MVC::Demo::Web::RouteConstraints
 
+$routes.map_route "delete-movie", "movies/delete/{id}",
+  {:controller => 'Movies', :action => 'delete' }
+
 $routes.map_route "movies/create",
   {:controller => 'Movies', :action => 'create' }
 
