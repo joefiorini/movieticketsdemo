@@ -201,6 +201,12 @@ ul#movies
     list-style-type: none;
 }
 
+ul#movies li
+{
+    float: left;
+    margin: 10px;
+}
+
 div#MovieBasicData
 {
     float: left;
