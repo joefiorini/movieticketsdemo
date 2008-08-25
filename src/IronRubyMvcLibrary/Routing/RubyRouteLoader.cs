@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web;
+using System.Web.Caching;
 using System.Web.Routing;
 using Microsoft.Scripting.Hosting;
 using Ruby.Runtime;
@@ -24,11 +25,27 @@ namespace IronRubyMvcLibrary.Routing
 
         public static void LoadFromRuby(this RouteCollection routes, VirtualPathProvider vpp, string virtualPath)
         {
-            VirtualFile file = vpp.GetFile(virtualPath);
-            using (var reader = new StreamReader(file.Open()))
+            if (LoadFromCache(routes) == null)
             {
-                LoadFromRuby(routes, reader);
+                routes.Clear();
+                VirtualFile file = vpp.GetFile(virtualPath);
+                using (var reader = new StreamReader(file.Open()))
+                {
+                    LoadFromRuby(routes, reader);
+                    CacheRoutesCollection(routes);
+                }
             }
+        }
+
+        public   static RouteCollection LoadFromCache(this RouteCollection routes)
+        {
+            routes = HttpContext.Current.Cache["routes"] as RouteCollection;
+            return routes;
+        }
+
+        private static void CacheRoutesCollection(RouteCollection routes)
+        {
+            HttpContext.Current.Cache.Insert("routes", routes, new CacheDependency(HttpContext.Current.Server.MapPath("~/routes.rb")));
         }
 
         public static void LoadFromRuby(this RouteCollection routes, TextReader reader)
