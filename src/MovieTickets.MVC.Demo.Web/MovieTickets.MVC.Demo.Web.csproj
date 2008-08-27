@@ -54,6 +54,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Microsoft.Web.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="MvcContrib, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\MvcContrib.dll</HintPath>
+    </Reference>
     <Reference Include="NHibernate, Version=1.2.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\NHibernate.dll</HintPath>
@@ -98,6 +102,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MigrationsController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\TheatersController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -108,8 +113,8 @@
     <Compile Include="Helpers\AppHelper.cs" />
     <Compile Include="Models\ModelContainer.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Theater.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RouteConstraints\IntegerRouteConstraint.cs" />
     <Compile Include="Views\Home\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -166,6 +171,20 @@
     <Compile Include="Views\Shared\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Views\Theaters\ZipCode.aspx.cs">
+      <DependentUpon>ZipCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Theaters\ZipCode.aspx.designer.cs">
+      <DependentUpon>ZipCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Theaters\Show.aspx.cs">
+      <DependentUpon>Show.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Theaters\Show.aspx.designer.cs">
+      <DependentUpon>Show.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="ARConfig.xml">
@@ -189,6 +208,8 @@
     <Content Include="Views\Movies\Edit.aspx" />
     <Content Include="Views\Movies\Index.aspx" />
     <Content Include="Views\Movies\Show.aspx" />
+    <Content Include="Views\Theaters\ZipCode.aspx" />
+    <Content Include="Views\Theaters\Show.aspx" />
     <Content Include="Web.config" />
     <Content Include="Content\Site.css" />
     <Content Include="Views\Home\About.aspx" />

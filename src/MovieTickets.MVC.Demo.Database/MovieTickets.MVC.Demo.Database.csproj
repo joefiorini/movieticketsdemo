@@ -52,6 +52,9 @@
   <ItemGroup>
     <Compile Include="001_CreateMovies.cs" />
     <Compile Include="002_AddPosterUrlToMovies.cs" />
+    <Compile Include="003_CreateTheaters.cs" />
+    <Compile Include="004_AddImageUrlToTheaters.cs" />
+    <Compile Include="005_CreateSchedules.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

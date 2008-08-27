@@ -19,7 +19,7 @@ namespace MovieTickets.MVC.Demo.Web
         protected void Application_Start()
         {
             IConfigurationSource config = new XmlConfigurationSource(Server.MapPath("/bin/ARConfig.xml"));
-            ActiveRecordStarter.Initialize(config, typeof(Movie));
+            ActiveRecordStarter.Initialize(config, typeof(Movie), typeof(Theater));
         }
     }
 }

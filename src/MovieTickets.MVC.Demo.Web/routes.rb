@@ -1,4 +1,6 @@
-﻿include MovieTickets::MVC::Demo::Web::RouteConstraints
+﻿$routes.map_route "theaters-by-zipcode", "theaters/zipcode/{zip}",
+  { :controller => 'Theaters', :action => 'Show', :zip => '00000' },
+  {:zip => "\\d{5}(-\\d{4}$|$)"}
 
 $routes.map_route "delete-movie", "movies/delete/{id}",
   {:controller => 'Movies', :action => 'delete' }
