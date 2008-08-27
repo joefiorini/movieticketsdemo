@@ -25,27 +25,27 @@ namespace IronRubyMvcLibrary.Routing
 
         public static void LoadFromRuby(this RouteCollection routes, VirtualPathProvider vpp, string virtualPath)
         {
-            if (LoadFromCache(routes) == null)
+            if (LoadFromCache(routes))
             {
                 routes.Clear();
                 VirtualFile file = vpp.GetFile(virtualPath);
                 using (var reader = new StreamReader(file.Open()))
                 {
                     LoadFromRuby(routes, reader);
-                    CacheRoutesCollection(routes);
+                    MarkRoutesCollectionLoaded(routes);
                 }
             }
         }
 
-        public static RouteCollection LoadFromCache(this RouteCollection routes)
+        public static bool LoadFromCache(this RouteCollection routes)
         {
-            routes = HttpContext.Current.Cache["routes"] as RouteCollection;
-            return routes;
+            var loaded = HttpContext.Current.Cache["routes_loaded"];
+            return loaded == null;
         }
 
-        private static void CacheRoutesCollection(RouteCollection routes)
+        private static void MarkRoutesCollectionLoaded(RouteCollection routes)
         {
-            HttpContext.Current.Cache.Insert("routes", routes, new CacheDependency(HttpContext.Current.Server.MapPath("~/routes.rb")));
+            HttpContext.Current.Cache.Insert("routes_loaded", true, new CacheDependency(HttpContext.Current.Server.MapPath("~/routes.rb")));
         }
 
         public static void LoadFromRuby(this RouteCollection routes, TextReader reader)
